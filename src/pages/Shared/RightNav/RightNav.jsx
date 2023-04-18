@@ -11,9 +11,9 @@ import QZone from "../QZone/QZone";
 
 const RightNav = () => {
   return (
-    <div>
-      <div className="d-flex flex-column">
-        <h4>Login With</h4>
+    <div className="my-4">
+      <div className="d-flex flex-column mb-4">
+        <h4 className="font-weight-bold">Login With</h4>
         <Button className="mb-2" variant="outline-primary">
           <FaGoogle></FaGoogle> Login with google
         </Button>
@@ -22,8 +22,8 @@ const RightNav = () => {
         </Button>
       </div>
 
-      <div>
-        <h4>Find Us On</h4>
+      <div className="my-4">
+        <h4 className="font-weight-bold">Find Us On</h4>
         <ListGroup>
           <ListGroup.Item>
             <FaFacebook></FaFacebook> Facebook

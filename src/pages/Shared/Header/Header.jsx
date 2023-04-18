@@ -7,21 +7,31 @@ import Marquee from "react-fast-marquee";
 const Header = () => {
   return (
     <>
-      <div className="text-center">
-        <img src={logo} alt="" />
+      <div className="text-center my-4">
+        <div>
+          <img src={logo} alt="" />
+        </div>
         <p className="text-secondary">Journalism Without Fear or Favour</p>
         <p className="text-secondary">
           {moment().format("dddd, MMMM D, YYYY")}
         </p>
       </div>
-      <div className="d-flex">
-        <Button variant="danger">Danger</Button>
+
+      <div className="d-flex my-4">
+        <Button variant="danger">Latest</Button>
         <Marquee className="text-danger" speed={75}>
           I can be a React component, multiple React components, or just some
           text.
         </Marquee>
       </div>
-      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+
+      <Navbar
+        className="my-4"
+        collapseOnSelect
+        expand="lg"
+        bg="light"
+        variant="light"
+      >
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -32,8 +42,8 @@ const Header = () => {
             </Nav>
             <Nav>
               <div className="d-flex align-items-center">
-                <Nav.Link href="#deets">Profile</Nav.Link>
-                <Nav.Link eventKey={2} href="#memes">
+                <Nav.Link href="#profile">Profile</Nav.Link>
+                <Nav.Link eventKey={2} href="#login">
                   <Button variant="secondary">Login</Button>
                 </Nav.Link>
               </div>

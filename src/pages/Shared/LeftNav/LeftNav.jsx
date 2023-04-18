@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./LeftNav.css";
 
 const LeftNav = () => {
   const [categories, setCategories] = useState([]);
@@ -18,13 +19,13 @@ const LeftNav = () => {
     loadData();
   }, []);
   return (
-    <div>
-      <h4>All Category</h4>
-      <div>
+    <div className="my-4">
+      <h4 className="font-weight-bold mb-4">All Category</h4>
+      <div className="category-item">
         {categories.map((singleCat) => (
-          <p>
+          <p className="p-2">
             <Link
-              className="text-secondary text-decoration-none"
+              className="text-secondary text-decoration-none ms-4"
               key={singleCat.id}
             >
               {singleCat.name}

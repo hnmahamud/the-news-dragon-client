@@ -14,7 +14,7 @@ const Root = () => {
           <Col lg={3}>
             <LeftNav></LeftNav>
           </Col>
-          <Col lg={6}>
+          <Col className="my-4" lg={6}>
             <h2>Main content coming soon...</h2>
           </Col>
           <Col lg={3}>

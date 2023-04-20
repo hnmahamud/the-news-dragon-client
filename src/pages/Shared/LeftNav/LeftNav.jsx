@@ -22,16 +22,17 @@ const LeftNav = () => {
     <div className="my-4">
       <h4 className="font-weight-bold mb-4">All Category</h4>
       <div className="category-item">
-        {categories.map((singleCat) => (
-          <p className="p-2">
-            <Link
-              className="text-secondary text-decoration-none ms-4"
-              key={singleCat.id}
-            >
-              {singleCat.name}
-            </Link>
-          </p>
-        ))}
+        {categories.length > 0 &&
+          categories.map((category) => (
+            <p key={category.id} className="p-2">
+              <Link
+                to={`/category/${category.id}`}
+                className="text-secondary text-decoration-none ms-4 p-2"
+              >
+                {category.name}
+              </Link>
+            </p>
+          ))}
       </div>
     </div>
   );

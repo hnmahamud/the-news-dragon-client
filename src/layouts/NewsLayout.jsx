@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import RightNav from "../pages/Shared/RightNav/RightNav";
 import Header from "../pages/Shared/Header/Header";
-import Footer from "../pages/Shared/Footer/Footer";
+// import Footer from "../pages/Shared/Footer/Footer";
 
 const NewsLayout = () => {
   return (
@@ -19,7 +19,7 @@ const NewsLayout = () => {
           </Col>
         </Row>
       </Container>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </Container>
   );
 };

@@ -17,11 +17,9 @@ const EditorsInsight = () => {
               <Card.Title>
                 21 The Most Stylish Wedding Guest Dresses For Spring
               </Card.Title>
-              <Card.Text>
-                <div className="text-secondary d-flex align-items-center">
-                  <FaCalendarAlt></FaCalendarAlt>
-                  <span className="ms-2">Jan 4, 2022</span>
-                </div>
+              <Card.Text className="text-secondary d-flex align-items-center">
+                <FaCalendarAlt></FaCalendarAlt>
+                <span className="ms-2">Jan 4, 2022</span>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -34,11 +32,9 @@ const EditorsInsight = () => {
               <Card.Title>
                 21 The Most Stylish Wedding Guest Dresses For Spring
               </Card.Title>
-              <Card.Text>
-                <div className="text-secondary d-flex align-items-center">
-                  <FaCalendarAlt></FaCalendarAlt>
-                  <span className="ms-2">Jan 4, 2022</span>
-                </div>
+              <Card.Text className="text-secondary d-flex align-items-center">
+                <FaCalendarAlt></FaCalendarAlt>
+                <span className="ms-2">Jan 4, 2022</span>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -51,11 +47,9 @@ const EditorsInsight = () => {
               <Card.Title>
                 21 The Most Stylish Wedding Guest Dresses For Spring
               </Card.Title>
-              <Card.Text>
-                <div className="text-secondary d-flex align-items-center">
-                  <FaCalendarAlt></FaCalendarAlt>
-                  <span className="ms-2">Jan 4, 2022</span>
-                </div>
+              <Card.Text className="text-secondary d-flex align-items-center">
+                <FaCalendarAlt></FaCalendarAlt>
+                <span className="ms-2">Jan 4, 2022</span>
               </Card.Text>
             </Card.Body>
           </Card>

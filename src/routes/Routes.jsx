@@ -1,23 +1,38 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Root from "../layouts/Root";
-// import Home from "../pages/Home/Home/Home";
 import Category from "../pages/Home/Category/Category";
 import NewsLayout from "../layouts/NewsLayout";
 import News from "../pages/News/News/News";
 import axios from "axios";
+import LoginRegLayout from "../layouts/LoginRegLayout";
+import Login from "../pages/Login/Login/Login";
+import Register from "../pages/Login/Register/Register";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root></Root>,
+    element: <LoginRegLayout></LoginRegLayout>,
     children: [
       {
         path: "/",
-        element: <Category></Category>,
-        loader: () => axios.get("http://localhost:5000/news"),
+        element: <Navigate to="/category/8"></Navigate>,
       },
       {
-        path: "/category/:id",
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+    ],
+  },
+  {
+    path: "/category",
+    element: <Root></Root>,
+    children: [
+      {
+        path: ":id",
         element: <Category></Category>,
         loader: async ({ params }) =>
           axios.get(`http://localhost:5000/category/${params.id}`),

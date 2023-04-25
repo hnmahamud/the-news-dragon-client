@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./LeftNav.css";
+import SportsZone from "../SportsZone/SportsZone";
 
 const LeftNav = () => {
   const [categories, setCategories] = useState([]);
@@ -34,6 +35,7 @@ const LeftNav = () => {
             </p>
           ))}
       </div>
+      <SportsZone></SportsZone>
     </div>
   );
 };

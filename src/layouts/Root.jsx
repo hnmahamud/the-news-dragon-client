@@ -6,6 +6,7 @@ import RightNav from "../pages/Shared/RightNav/RightNav";
 import { Outlet } from "react-router-dom";
 import MyNavigationBar from "../pages/Shared/MyNavigationBar/MyNavigationBar";
 import MyMarqueeBar from "../pages/Shared/MyMarqueeBar/MyMarqueeBar";
+import LearnMorePart from "../pages/Shared/LearnMorePart/LearnMorePart";
 
 const Root = () => {
   return (
@@ -23,6 +24,7 @@ const Root = () => {
           </Col>
           <Col lg={3}>
             <RightNav></RightNav>
+            <LearnMorePart></LearnMorePart>
           </Col>
         </Row>
       </Container>

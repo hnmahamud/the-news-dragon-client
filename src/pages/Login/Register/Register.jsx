@@ -10,7 +10,7 @@ const Register = () => {
     <div className="d-flex flex-column justify-content-center align-items-center">
       <Form style={{ width: "30%" }} className="rounded-1 shadow p-4">
         <Form.Group className="mb-3" controlId="formBasicName">
-          <h3 className="text-center mb-5">Create and account</h3>
+          <h3 className="text-center mb-5">Create an account</h3>
           <Form.Label>Your name</Form.Label>
           <Form.Control type="text" placeholder="Enter name" />
         </Form.Group>

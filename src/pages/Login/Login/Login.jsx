@@ -32,7 +32,10 @@ const Login = () => {
           </div>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Group
+          className="text-secondary mb-3"
+          controlId="formBasicCheckbox"
+        >
           <Form.Check type="checkbox" label="Remember me" />
         </Form.Group>
 
@@ -40,13 +43,12 @@ const Login = () => {
           Login
         </Button>
 
-        <div className="d-flex flex-column mb-3">
-          <p className="text-center text-secondary">Or</p>
-          <Button className="mb-2" variant="outline-primary">
-            <FaGoogle></FaGoogle> Login with google
+        <div className="d-flex mb-3">
+          <Button className="w-100 me-2" variant="outline-primary">
+            <FaGoogle></FaGoogle> Login with Google
           </Button>
-          <Button variant="outline-secondary">
-            <FaGithub></FaGithub> Login with github
+          <Button className="w-100" variant="outline-secondary">
+            <FaGithub></FaGithub> Login with Github
           </Button>
         </div>
 

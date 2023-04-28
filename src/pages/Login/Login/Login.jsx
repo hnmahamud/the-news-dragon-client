@@ -7,7 +7,7 @@ import {
   FaGithub,
   FaGoogle,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProviders";
 import { toast } from "react-toastify";
 
@@ -21,6 +21,11 @@ const Login = () => {
     githubSignIn,
     passwordReset,
   } = useContext(AuthContext);
+
+  // Use location and navigate for get the pathname where user wanted to go.
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location?.state?.pathname || "/";
 
   // State
   const [err, setErr] = useState("");
@@ -95,15 +100,15 @@ const Login = () => {
         const user = userCredential.user;
         console.log(user);
 
-        // Navigate to user target path
-        // navigate(from, { replace: true });
-
-        setErr("");
-        event.target.reset();
-
         toast("Login Successfully!", {
           position: toast.POSITION.TOP_CENTER,
         });
+
+        // Navigate to user target path
+        navigate(from, { replace: true });
+
+        setErr("");
+        event.target.reset();
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -268,7 +273,7 @@ const Login = () => {
 
         <div className="text-secondary ">
           Don’t have an account yet?{" "}
-          <Link to="/register" className="text-decoration-none">
+          <Link to="/register" className="text-decoration-none" state={from}>
             Sign up
           </Link>
         </div>

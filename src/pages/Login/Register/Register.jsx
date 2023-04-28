@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Button, Form, Spinner } from "react-bootstrap";
 import { FaExclamationCircle, FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProviders";
 import { toast } from "react-toastify";
 
@@ -9,6 +9,11 @@ const Register = () => {
   // Context API
   const { loading, setLoading, createUser, profileUpdate, verificationEmail } =
     useContext(AuthContext);
+
+  // Use location and navigate for get the pathname where user wanted to go.
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location?.state || "/";
 
   // State
   const [err, setErr] = useState("");
@@ -82,13 +87,16 @@ const Register = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        setErr("");
-        event.target.reset();
-        setAcceptCondition(false);
 
         toast("Successfully registered!", {
           position: toast.POSITION.TOP_CENTER,
         });
+
+        // Navigate to user target path
+        navigate(from, { replace: true });
+
+        setErr("");
+        event.target.reset();
 
         // Update user profile
         profileUpdate(name, photoUrl)
@@ -111,6 +119,10 @@ const Register = () => {
         console.log(`Error Message: ${errorMessage}`);
         setLoading(false);
       });
+  };
+
+  const handleTermsAndCondition = (event) => {
+    setAcceptCondition(event.target.checked);
   };
 
   return (
@@ -173,7 +185,7 @@ const Register = () => {
 
         <Form.Group className="d-flex mb-3" controlId="formBasicCheckbox">
           <Form.Check
-            onClick={() => setAcceptCondition(!acceptCondition)}
+            onChange={handleTermsAndCondition}
             className="me-2"
             type="checkbox"
             required

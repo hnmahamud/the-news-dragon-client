@@ -3,10 +3,28 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProviders";
 import { FaUserCircle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const MyNavigationBar = () => {
+  // Context API
+  const { user, logout } = useContext(AuthContext);
+
+  // Use location for active class
   const location = useLocation();
-  const { user } = useContext(AuthContext);
+
+  // Logout handler
+  const logoutHandler = () => {
+    logout()
+      .then(() => {
+        toast("Logout Successfully!", {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <Navbar
       className="my-4"
@@ -58,7 +76,9 @@ const MyNavigationBar = () => {
               )}
               {user ? (
                 <Nav.Link as={NavLink}>
-                  <Button variant="secondary">Logout</Button>
+                  <Button onClick={logoutHandler} variant="secondary">
+                    Logout
+                  </Button>
                 </Nav.Link>
               ) : (
                 <Nav.Link as={NavLink} to="/login">

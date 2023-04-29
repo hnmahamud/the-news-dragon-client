@@ -8,11 +8,13 @@ import LoginRegLayout from "../layouts/LoginRegLayout";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LoginRegLayout></LoginRegLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -31,6 +33,7 @@ const router = createBrowserRouter([
   {
     path: "/category",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: ":id",
@@ -43,6 +46,7 @@ const router = createBrowserRouter([
   {
     path: "/news",
     element: <NewsLayout></NewsLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: ":id",

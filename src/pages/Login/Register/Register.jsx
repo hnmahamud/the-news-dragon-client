@@ -4,6 +4,7 @@ import { FaExclamationCircle, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProviders";
 import { toast } from "react-toastify";
+import TermsModal from "./TermsModal";
 
 const Register = () => {
   // Context API
@@ -19,6 +20,7 @@ const Register = () => {
   const [err, setErr] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [acceptCondition, setAcceptCondition] = useState(false);
+  const [modalShow, setModalShow] = React.useState(false);
 
   // Email Validation with Regex
   // uncontrolled component => controlled component
@@ -192,7 +194,16 @@ const Register = () => {
           />
           <Form.Label className="text-secondary">
             I accept the
-            <Link className="text-decoration-none"> Terms and Conditions</Link>
+            <>
+              <Link
+                onClick={() => setModalShow(true)}
+                className="text-decoration-none"
+              >
+                {" "}
+                Terms and Conditions
+              </Link>
+              <TermsModal show={modalShow} onHide={() => setModalShow(false)} />
+            </>
           </Form.Label>
         </Form.Group>
 

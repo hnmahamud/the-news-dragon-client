@@ -39,7 +39,9 @@ const router = createBrowserRouter([
         path: ":id",
         element: <Category></Category>,
         loader: async ({ params }) =>
-          axios.get(`http://localhost:5000/category/${params.id}`),
+          axios.get(
+            `https://the-news-dragon-server-hnmahamud.vercel.app/category/${params.id}`
+          ),
       },
     ],
   },
@@ -56,7 +58,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          axios.get(`http://localhost:5000/news/${params.id}`),
+          axios.get(
+            `https://the-news-dragon-server-hnmahamud.vercel.app/news/${params.id}`
+          ),
       },
     ],
   },
